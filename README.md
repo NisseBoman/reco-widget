@@ -16,10 +16,9 @@ All development will be done over at our [github page](https://github.com/NisseB
 
 This section describes how to install the plugin and get it working.
 
-e.g.
-
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
+1. Upload all files to the `/wp-content/plugins/reco-widget` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
+1. Add the CompanyId and API key via the settings menu in wordpress. (Information you get form Reco.se)
 1. Place the shortcode `[reco-widget]` where you want to place it.
 
 ## Usage
