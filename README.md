@@ -39,7 +39,7 @@ You can get more information from you contact at [Reco.se](http://www.reco.se)
 
 ## TODO
 - [x] Add employeeid as filter
-- [ ] Add random reco's fuction to randomize the reco's shown
+- [x] Add random reco's fuction to randomize the reco's shown
 - [ ] Add feature multiple employeeid's
 - [ ] Create some sort of local cache to avoid the site to break if the API is unavaileble.
 - [ ] Layout handling in a less hardcoded way. Maby with other shortcodes but not sure how.
@@ -50,4 +50,4 @@ You can get more information from you contact at [Reco.se](http://www.reco.se)
 - Initial version.
 - Fixed issues with old widget and new API from reco
 - Added shortcode attributes for emplyeeId, to & from filter
-- TODO: Add more filters like random and multiple employeeid's
+- Random reviews
