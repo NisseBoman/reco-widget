@@ -10,6 +10,7 @@
     box-shadow: 0 0 4px #a8a8a8;
     -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#a8a8a8')";
     filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#a8a8a8');
+
     padding: 10px 20px 5px 20px;
     margin: 20px 4px 20px 4px;
 }
@@ -29,15 +30,15 @@
 #reco_reviews_list {
 	list-style:none outside none !important;
 	float: left;
-	margin:0; 
-	padding: 15px 0 0 0 !important; 
+	margin:0;
+	padding: 15px 0 0 0 !important;
 	overflow: hidden;
 }
 
 #reco_reviews_list li  {
 	line-height:20px;
 	float: left;
-	padding:5px 0 10px !important; 
+	padding:5px 0 10px !important;
 	width: 100%;
 	list-style: none outside none !important;
 }
@@ -53,17 +54,17 @@
 	min-width: 100px;
 	display: table-cell;
 	vertical-align: top;
-	border-bottom:1px solid #EEE; 
+	border-bottom:1px solid #EEE;
 	padding-bottom: 20px;
 }
 
 .reco_profile_badge img {
 	padding: 0;
 	margin: 0;
-	background: none; 
-	width: 70px; 
-	height: 70px; 
-	margin: 5px 20px 5px 0; 
+	background: none;
+	width: 70px;
+	height: 70px;
+	margin: 5px 20px 5px 0;
 	border: 5px solid #3a5b66;
 }
 
@@ -79,8 +80,8 @@
 
 .reco_rating_box_small{
 	width:100px;
-	height:20px; 
-	margin-bottom:3px; 
+	height:20px;
+	margin-bottom:3px;
 	background:url(http://www.reco.se/img/sticker/recoSmall.png) no-repeat 0 0;
 }
 
@@ -126,7 +127,7 @@
 	width: 100px;
 	display: table-cell;
 	vertical-align: top;
-	border-bottom:1px solid #EEE; 
+	border-bottom:1px solid #EEE;
 	padding-bottom: 20px;
 }
 
@@ -134,5 +135,5 @@
 	display: table-cell;
 	vertical-align: top;
 	border-bottom:1px solid #EEE;
-	padding-bottom: 20px; 
+	padding-bottom: 20px;
 }
