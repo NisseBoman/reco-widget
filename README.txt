@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: plux, angrycreative, wilsoncreative
+Contributors: plux, angrycreative, wilsoncreative, nisse@tnfgruppen.com
 Tags: reco, widget, recommendation, recos
 Requires at least: 3.0
 Tested up to: 4.3.1
@@ -12,12 +12,12 @@ At the moment you must contact reco.se to be able to use this plugin.
 
 Reco is a swedish consumer site where consumers recommend companies to other consumers by giving 'recos'. Notice that the plugin is in Swedish only right now as reco.se only are in Swedish anyway.
 
-This plugin uses a shortcode "[reco-widget]" so that you can show a widget with recos for your company, 
+This plugin uses a shortcode "[reco-widget]" so that you can show a widget with recos for your company,
 but you must contact reco.se to be able to use this plugin as it requires a "company id" and a "API-Key".
 
-All development will be done over at our [github page](https://github.com/Angrycreative/reco-widget)
+All development will be done over at our [github page](https://github.com/NisseBoman/reco-widget)
 
-You can also get more information [here](http://www.angrycreative.se/oppen-kallkod/reco-for-wordpress/) (in Swedish)
+
 
 == Installation ==
 
@@ -31,11 +31,8 @@ e.g.
 
 == Changelog ==
 
-= 0.3 = 
-* Much needed update to the new repo, kindly contributed by wilsoncreative! Thanks! 
-
-= 0.2 =
-* Fixing a small issue with incorrect links.
-
 = 0.1 =
 * Initial version.
+* Fixed issues with old widget and new API from reco
+* Added shortcode attributes for emplyeeId, to & from filter
+* TODO: Add more filters like random and multiple employeeid's
