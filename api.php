@@ -13,7 +13,7 @@ class Reco {
 		$this->_atts = $atts;
 	}
 
-	public function getReviews($numItems = 0, $atts, $reviewSort = "DESC") {
+	public function getReviews($numItems = 0, $reviewSort = "DESC") {
 		$url = sprintf("%s%s/reviews?apiKey=%s&limit=%d", // Needs to be to avoid php converting & to &amp;
 		$this->_apiUrl,
 		$this->_companyId,
@@ -61,8 +61,31 @@ https://api.reco.se/venue/3725227/employee/1956/reviews?apiKey=4dccee071e0c7d587
 		$url = str_replace(" ","",$url); // this is due to the fact that some servers add a whitespace before the & sign..
 
 		$response = wp_remote_get($url);
-		return $response['body']; // use the content
 
-		//return file_get_contents($url,FILE_TEXT);
+		if(isset($this->_atts['random-reviews']) && $this->_atts['random-reviews'] == 'true') {
+				//error_log(var_dump($response['body']));
+
+				//$tmp_array = json_decode($response['body'],true);
+				//$this->shuffle_assoc($tmp_array);
+				//shuffle($tmp_array);
+				//$tmp_array = $this->shuffle_assoc($tmp_array);
+
+				return $response['body']; // function not ready
+				//return json_encode($tmp_array,true);
+		}else {
+			return $response['body']; // use the content
+		}
+	}
+
+	private function shuffle_assoc($list) {
+	  if (!is_array($list)) return $list;
+
+	  $keys = array_keys($list);
+	  shuffle($keys);
+	  $random = array();
+	  foreach ($keys as $key) {
+	    $random[$key] = $list[$key];
+	  }
+	  return $random;
 	}
 }

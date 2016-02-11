@@ -74,8 +74,6 @@ add_shortcode('reco-widget', 'reco_widget_short_code');
 function reco_widget_short_code($atts) {
 	$atts = shortcode_atts( array(
 			'random-reviews' => 'false', // Show random reviews
-			'latest' => 'false', // only show the latest.
-			'latest-num' => '5', // latest num
 			'employeeid' => '0', // what employeeid to show. like to use multiple separated with comma but not in this version
 			'limit' => '-0', // override global limit
 			'short-review' => 'false'// if we only write some of the review text.. this is a google thingy.
@@ -135,7 +133,7 @@ function reco_widget_short_code($atts) {
 
 			$buf .= '</li>';
 
-            if (($i+1) == $numRecos) break;
+
 
 		}
 	}
