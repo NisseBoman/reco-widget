@@ -76,7 +76,9 @@ function reco_widget_short_code($atts) {
 			'random-reviews' => 'false', // Show random reviews
 			'latest' => 'false', // only show the latest.
 			'latest-num' => '5', // latest num
-			'employeeid' => '0' // what employeeid to show. like to use multiple separated with comma but not in this version
+			'employeeid' => '0', // what employeeid to show. like to use multiple separated with comma but not in this version
+			'limit' => '-0', // override global limit
+			'short-review' => 'false'// if we only write some of the review text.. this is a google thingy.
 	), $atts, 'reco-widget' );
 
 	require(dirname(__FILE__) . '/api.php');
@@ -84,12 +86,13 @@ function reco_widget_short_code($atts) {
 	$r = new Reco($options['reco_widget_setting_api_key'], $options['reco_widget_setting_company_id'], $atts);
 
 
-	if($options['reco_widget_setting_num_recos'] == '-1') {
-		$numRecos = 999;
-	} else {
-		$numRecos = $options['reco_widget_setting_num_recos'];
+	if($atts['limit'] == '-0') {
+		if($options['reco_widget_setting_num_recos'] == '-1') {
+			$numRecos = 999;
+		} else {
+			$numRecos = $options['reco_widget_setting_num_recos'];
+		}
 	}
-
 
 	$itemList = $r->getReviews($numRecos);
 	$data = $itemList->reviews;

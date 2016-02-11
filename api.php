@@ -27,20 +27,21 @@ https://api.reco.se/venue/3725227/employee/1956/reviews?apiKey=4dccee071e0c7d587
 			*/
 			$baseUrl = $this->_apiUrl . $this->_companyId;
 
-			if(isset($this->_atts['employeeid']) && $this->_atts['employeeid'] != '0') {
-				$employeeidArray = explode(",",$this->_atts['employeeid']);
-				error_log(print_r($employeeidArray,true));
-
-				if(is_array($employeeidArray)) {
-					$new_url = $baseUrl . "/employee/" . $this->_atts['employeeid'] . "/reviews?apiKey=" . $this->_apiKey;
-					$url = $new_url;
-
-
+			if(isset($this->_atts['employeeid']) && $this->_atts['employeeid'] != '0' && is_numeric($this->_atts['employeeid'])) {
+					$baseUrl = $baseUrl . "/employee/" . $this->_atts['employeeid'] . "/reviews?apiKey=" . $this->_apiKey;
 				}
+
+			if(isset($this->_atts['to']) && isset($this->_atts['from'])){
+					$baseUrl .= "&from=" . $this->_atts['from'] . "&to=" . $this->_atts['to'];
 
 			}
 
+			if(isset($this->_atts['limit']) && is_numeric($this->_atts['limit'])) {
+					$baseUrl .= "&limit=" . $this->_atts['limit'];
 
+			}
+
+			$url = $baseUrl;
 
 
 		$reviewList = $this->_fetchUrl($url);
