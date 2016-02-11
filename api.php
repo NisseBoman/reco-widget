@@ -29,6 +29,8 @@ https://api.reco.se/venue/3725227/employee/1956/reviews?apiKey=4dccee071e0c7d587
 
 			if(isset($this->_atts['employeeid']) && $this->_atts['employeeid'] != '0' && is_numeric($this->_atts['employeeid'])) {
 					$baseUrl = $baseUrl . "/employee/" . $this->_atts['employeeid'] . "/reviews?apiKey=" . $this->_apiKey;
+				}else {
+					$baseUrl .= '/reviews?apiKey=' . $this->_apiKey;
 				}
 
 			if(isset($this->_atts['to']) && isset($this->_atts['from'])){
