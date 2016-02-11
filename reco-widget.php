@@ -76,22 +76,21 @@ function reco_widget_short_code($atts) {
 			'random-reviews' => 'false', // For showing random random-reviews
 			'latest' => 'true', // Show only latest/last combined with latest-num
 			'latest-num' => '5', // see above comment
-			'employeeId' => 'false' // if blank show all employeeId separate with comma
 		), $atts, 'reco-widget' );
 
 	require(dirname(__FILE__) . '/api.php');
 	$options = get_option('reco_widget_options');
-	$r = new Reco($options['reco_widget_setting_api_key'], $options['reco_widget_setting_company_id']);
+	$r = new Reco($options['reco_widget_setting_api_key'], $options['reco_widget_setting_company_id'], $atts);
 
-	if($atts['numItems'] == false) {
-		if($options['reco_widget_setting_num_recos'] == '-1') {
-			$numRecos = 999;
-		} else {
-			$numRecos = $options['reco_widget_setting_num_recos'];
-		}
+
+	if($options['reco_widget_setting_num_recos'] == '-1') {
+		$numRecos = 999;
+	} else {
+		$numRecos = $options['reco_widget_setting_num_recos'];
 	}
 
-	$itemList = $r->getReviews($numRecos,$atts);
+
+	$itemList = $r->getReviews($numRecos);
 	$data = $itemList->reviews;
 
 	$buf = '';
