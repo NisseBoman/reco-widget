@@ -69,14 +69,15 @@ function reco_add_scripts() {
   	  false);
 }
 
+
 add_shortcode('reco-widget', 'reco_widget_short_code');
 function reco_widget_short_code($atts) {
-	$atts = shortcode_atts(
-		array(
-			'random-reviews' => 'false', // For showing random random-reviews
-			'latest' => 'true', // Show only latest/last combined with latest-num
-			'latest-num' => '5', // see above comment
-		), $atts, 'reco-widget' );
+	$atts = shortcode_atts( array(
+			'random-reviews' => 'false', // Show random reviews
+			'latest' => 'false', // only show the latest.
+			'latest-num' => '5', // latest num
+			'employeeid' => '0' // what employeeid to show. like to use multiple separated with comma but not in this version
+	), $atts, 'reco-widget' );
 
 	require(dirname(__FILE__) . '/api.php');
 	$options = get_option('reco_widget_options');

@@ -22,25 +22,23 @@ class Reco {
 
 
 		/*
-		array(
-			'random-reviews' => 'false', // For showing random random-reviews
-			'latest' => 'true', // Show only latest/last combined with latest-num
-			'latest-num' => '5', // see above comment
-			'employeeId' => 'false' // if blank show all employeeId separate with comma
-
-
 https://api.reco.se/venue/3725227/reviews?from=2016-01-01&to=2016-02-28&limit=10&apiKey=4dccee071e0c7d587615f8a40dbe4cc7
-
 https://api.reco.se/venue/3725227/employee/1956/reviews?apiKey=4dccee071e0c7d587615f8a40dbe4cc7
 			*/
 			$baseUrl = $this->_apiUrl . $this->_companyId;
 
-			if(isset($atts['employeeId']) && $atts['employeeId'] != 'false') {
-				$new_url = $baseUrl . "/employee/" . $atts['employeeId'] . "/reviews?apiKey=" . $this->_apiKey;
-				$url = $new_url;
+			if(isset($this->_atts['employeeid']) && $this->_atts['employeeid'] != '0') {
+				$employeeidArray = explode(",",$this->_atts['employeeid']);
+				error_log(print_r($employeeidArray,true));
+
+				if(is_array($employeeidArray)) {
+					$new_url = $baseUrl . "/employee/" . $this->_atts['employeeid'] . "/reviews?apiKey=" . $this->_apiKey;
+					$url = $new_url;
+
+
+				}
 
 			}
-			error_log("employeeId: " . $atts['employeeId']);
 
 
 
@@ -58,10 +56,10 @@ https://api.reco.se/venue/3725227/employee/1956/reviews?apiKey=4dccee071e0c7d587
 
 	}
 	private function _fetchUrl($url) {
-		$url = str_replace(" ","",$url);
+		error_log("URL: " . $url);
+		$url = str_replace(" ","",$url); // this is due to the fact that some servers add a whitespace before the & sign..
 
 		$response = wp_remote_get($url);
-		error_log("BODY: " . $response['body']);
 		return $response['body']; // use the content
 
 		//return file_get_contents($url,FILE_TEXT);
