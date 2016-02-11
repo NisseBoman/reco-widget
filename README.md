@@ -4,7 +4,7 @@
 
 Reco is a swedish consumer site where consumers recommend companies to other consumers by giving 'recos'. Notice that the plugin is in Swedish only right now as reco.se only are in Swedish anyway.
 
-All development will be done over at our [github page](https://github.com/NisseBoman/reco-widget)
+This repo is based on an existing repo that have gone stale [github page](https://github.com/Angrycreative/reco-widget)
 
 ## Contributors
 - plux
