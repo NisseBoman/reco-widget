@@ -18,8 +18,6 @@ class Reco {
 		$this->_apiKey,
 		$numItems);
 
-
-		error_log("URL::" . $url);
 		$reviewList = $this->_fetchUrl($url);
 
 		if(empty($reviewList)) {
