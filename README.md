@@ -30,12 +30,19 @@ Availeble attributes to the shortcode is
 - [reco-widget limit="val"] will override the global limit in the options pane
 - [reco-widget from="YYYY-mm-dd" to="YYYY-mm-dd"] show's only reco's between the written dates
 - [reco-widget employeeid="val"] Show only reco from the selected employeeid. The id is something you need to find via the API..
+You might wanna change some of the css and the HTML code output in the file `reco-widget.php` for the styling and look you want.
+
+### Examples sites are
+- [www.salongmajo.se](http://www.salongmajo.se/)
+- [www.verisure.se/](http://www.verisure.se/)
+You can get more information from you contact at [Reco.se](http://www.reco.se)
 
 ## TODO
 - [x] Add employeeid as filter
 - [ ] Add random reco's fuction to randomize the reco's shown
 - [ ] Add feature multiple employeeid's
 - [ ] Create some sort of local cache to avoid the site to break if the API is unavaileble.
+- [ ] Layout handling in a less hardcoded way. Maby with other shortcodes but not sure how.
 
 ## Changelog
 
