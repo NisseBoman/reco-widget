@@ -30,6 +30,7 @@ Availeble attributes to the shortcode is
 - [reco-widget limit="val"] will override the global limit in the options pane
 - [reco-widget from="YYYY-mm-dd" to="YYYY-mm-dd"] show's only reco's between the written dates
 - [reco-widget employeeid="val"] Show only reco from the selected employeeid. The id is something you need to find via the API..
+- [reco-widget last-days="5"] Show only recos from the last num-days.
 You might wanna change some of the css and the HTML code output in the file `reco-widget.php` for the styling and look you want.
 
 ### Examples sites are
@@ -45,6 +46,10 @@ You can get more information from you contact at [Reco.se](http://www.reco.se)
 - [ ] Layout handling in a less hardcoded way. Maby with other shortcodes but not sure how.
 
 ## Changelog
+
+### 0.2
+ - Added shortcode 'last-days' to only get recos for the num-last days. This overrides the to & form filter
+ - removed some dev ouput in the error_log
 
 ### 0.1
 - Initial version.

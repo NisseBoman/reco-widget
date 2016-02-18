@@ -76,7 +76,8 @@ function reco_widget_short_code($atts) {
 			'random-reviews' => 'false', // Show random reviews
 			'employeeid' => '0', // what employeeid to show. like to use multiple separated with comma but not in this version
 			'limit' => '-0', // override global limit
-			'short-review' => 'false'// if we only write some of the review text.. this is a google thingy.
+			'short-review' => 'false', // if we only write some of the review text.. this is a google thingy.
+			'last-days' => 'false' // show only num-last days of recos. (this is used before the to & from cores)
 	), $atts, 'reco-widget' );
 
 	require(dirname(__FILE__) . '/api.php');

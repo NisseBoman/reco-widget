@@ -14,7 +14,7 @@ class Reco {
 	}
 
 	public function getReviews($numItems = 0, $reviewSort = "DESC") {
-		
+
 		/*
 		example url's
 https://api.reco.se/venue/3725227/reviews?from=2016-01-01&to=2016-02-28&limit=10&apiKey=[key]
@@ -28,10 +28,18 @@ https://api.reco.se/venue/3725227/employee/1956/reviews?apiKey=[key]
 				$baseUrl .= '/reviews?apiKey=' . $this->_apiKey;
 			}
 
-		if(isset($this->_atts['to']) && isset($this->_atts['from'])){
-				$baseUrl .= "&from=" . $this->_atts['from'] . "&to=" . $this->_atts['to'];
+		if($this->_atts['last-days'] == 'false')
+		{
+			if(isset($this->_atts['to']) && isset($this->_atts['from'])){
+					$baseUrl .= "&from=" . $this->_atts['from'] . "&to=" . $this->_atts['to'];
 
-		}
+			}
+		}elseif(is_numeric($this->_atts['last-days'])) {
+
+						$date = strtotime(date("Y-m-d"));
+						$date = strtotime("-" . $this->_atts['last-days'] . " day", $date);
+						$baseUrl .= "&from=" . date("Y-m-d",$date) . "&to=" . date("Y-m-d");
+	}
 
 		if(isset($this->_atts['limit']) && is_numeric($this->_atts['limit'])) {
 				$baseUrl .= "&limit=" . $this->_atts['limit'];
@@ -52,7 +60,7 @@ https://api.reco.se/venue/3725227/employee/1956/reviews?apiKey=[key]
 	}
 
 	private function _fetchUrl($url) {
-		error_log("URL: " . $url);
+		//error_log("URL: " . $url);
 		$url = str_replace(" ","",$url); // this is due to the fact that some servers add a whitespace before the & sign..
 
 		$response = wp_remote_get($url);
